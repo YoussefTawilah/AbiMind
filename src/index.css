@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ── Abimind Design Tokens (Dark Focus) ─────────────────────────── */
+@theme {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Surfaces */
+  --color-surface-base: #0f1014;
+  --color-surface-raised: #18191f;
+  --color-surface-overlay: #1f2028;
+  --color-surface-elevated: #262730;
+
+  /* Borders */
+  --color-border-subtle: #2c2d38;
+  --color-border-default: #383945;
+  --color-border-strong: #46475a;
+
+  /* Text */
+  --color-text-primary: #f0f1f5;
+  --color-text-secondary: #9b9dad;
+  --color-text-tertiary: #6b6d7b;
+  --color-text-inverse: #0f1014;
+
+  /* Accent (Teal) */
+  --color-accent: #2dd4bf;
+  --color-accent-hover: #26b8a3;
+  --color-accent-muted: #2dd4bf33;
+  --color-accent-subtle: #2dd4bf14;
+
+  /* Semantic */
+  --color-success: #34d399;
+  --color-success-muted: #34d39926;
+  --color-warning: #fbbf24;
+  --color-warning-muted: #fbbf2426;
+  --color-danger: #f87171;
+  --color-danger-muted: #f8717126;
+  --color-info: #2dd4bf;
+
+  /* Score (Brainscape-style, dark-tuned) */
+  --color-score-1: #ef4444;
+  --color-score-1-hover: #dc2626;
+  --color-score-2: #f97316;
+  --color-score-2-hover: #ea580c;
+  --color-score-3: #facc15;
+  --color-score-3-hover: #ca8a04;
+  --color-score-4: #a3e635;
+  --color-score-4-hover: #84cc16;
+  --color-score-5: #22c55e;
+  --color-score-5-hover: #16a34a;
+  --color-score-neutral: #4b4d5c;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  /* Layout */
+  --max-width-content: 45rem;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-surface-base font-sans text-text-primary;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-border-subtle bg-surface-raised p-5 shadow-[0_1px_3px_#00000040];
+  }
+
+  .panel-nested {
+    @apply rounded-xl border border-border-subtle bg-surface-overlay p-4;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-border-default bg-surface-overlay px-3 py-2 text-sm text-text-primary placeholder:text-text-tertiary transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 bg-accent text-text-inverse hover:bg-accent-hover;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 border border-border-default bg-surface-overlay text-text-primary hover:border-border-strong hover:bg-surface-elevated;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 text-text-secondary hover:bg-accent-subtle hover:text-text-primary;
+  }
+
+  .btn-success {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 bg-success-muted text-success hover:bg-success/30;
+  }
+
+  .btn-warning {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 border border-warning/30 bg-warning-muted text-warning hover:bg-warning/20;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 text-danger hover:bg-danger-muted;
+  }
+
+  .btn-accent-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 border border-accent/25 bg-accent-muted text-accent hover:bg-accent/25;
+  }
+
+  .link-back {
+    @apply text-sm text-accent transition-colors hover:text-accent-hover;
+  }
+
+  .text-display {
+    @apply text-[1.75rem] font-semibold leading-tight text-text-primary;
+  }
+
+  .text-heading {
+    @apply text-xl font-semibold leading-snug text-text-primary;
+  }
+
+  .text-subheading {
+    @apply text-base font-medium text-text-primary;
+  }
+
+  .text-body {
+    @apply text-sm text-text-secondary;
+  }
+
+  .text-caption {
+    @apply text-xs text-text-tertiary;
+  }
+
+  .alert-error {
+    @apply rounded-lg border border-danger/30 bg-danger-muted px-4 py-3 text-sm text-danger;
+  }
+
+  .alert-warning {
+    @apply rounded-lg border border-warning/30 bg-warning-muted px-4 py-3 text-sm text-warning;
+  }
+
+  .stat-value {
+    @apply text-4xl font-bold tabular-nums text-accent;
+  }
+
+  .card-text-content {
+    @apply w-full text-left;
+  }
+
+  .card-text-content p + p,
+  .card-text-content p + ul,
+  .card-text-content ul + p,
+  .card-text-content ul + ul {
+    @apply mt-2;
+  }
+
+  .card-text-content ul {
+    @apply list-disc space-y-1.5 pl-5;
+    list-style-position: outside;
+  }
+
+  .card-text-content li {
+    @apply pl-0.5 leading-relaxed;
+  }
+}
+
+/* DateInput: natives Icon unsichtbar, eigenes helles SVG sichtbar (außerhalb @layer) */
+.date-input-wrap .input-date {
+  color-scheme: dark;
+  padding-right: 2.5rem;
+}
+
+.date-input-wrap .input-date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.date-input-wrap .input-date::-webkit-calendar-picker-indicator:hover {
+  opacity: 0;
+}
