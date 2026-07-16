@@ -40,14 +40,11 @@ export function AppHeader({
             onClick={onGoHome}
             className="flex min-w-0 items-center gap-2.5 text-left transition-opacity hover:opacity-90 sm:gap-3"
           >
-            <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl sm:h-12 sm:w-12">
-              <img
-                src="/logo-neu.png"
-                alt=""
-                aria-hidden
-                className="absolute left-0 top-0 h-[200%] w-full max-w-none object-cover object-top"
-              />
-            </span>
+            <img
+              src="/logo-neu.png"
+              alt="AbiMind"
+              className="h-10 w-10 shrink-0 rounded-xl object-contain sm:h-12 sm:w-12"
+            />
             <span className="min-w-0">
               <span className="block text-base font-semibold text-accent sm:text-lg">AbiMind</span>
               <span className="block text-[11px] leading-snug text-text-secondary sm:text-xs">
