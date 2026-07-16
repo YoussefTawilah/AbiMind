@@ -41,7 +41,7 @@ export function AppHeader({
             className="flex min-w-0 items-center gap-2.5 text-left transition-opacity hover:opacity-90 sm:gap-3"
           >
             <img
-              src="/logo-neu.png"
+              src="/logo-icon.png"
               alt="AbiMind"
               className="h-10 w-10 shrink-0 rounded-xl object-contain sm:h-12 sm:w-12"
             />
