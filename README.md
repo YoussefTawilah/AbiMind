@@ -1,18 +1,10 @@
-# AbiMind
-
-**Lerne smarter, nicht länger.**
-
+AbiMind
+Lerne smarter, nicht länger.
 AbiMind ist eine Progressive Web App zur Abitur-Vorbereitung: Karteikarten verwalten, gezielt lernen und mit KI aus Unterlagen neue Karten erzeugen. Die App läuft im Browser, synchronisiert optional in der Cloud und lässt sich auf Handy und Desktop installieren.
 
-<!-- Live-URL nach dem Vercel-Deployment hier eintragen -->
-**[Live Demo](https://DEINE-URL.vercel.app)**
+[Live Demo](https://abi-mind-swart.vercel.app)
 
----
-
-## Screenshots
-
-<!-- Screenshots unter ./screenshots/ ablegen und unten verlinken -->
-
+Screenshots:
 ![Dashboard – Übersicht mit Decks, Ordnern und Abi-Countdown](./screenshots/dashboard.png)
 <!-- Screenshot hier einfügen: Dashboard -->
 
@@ -30,27 +22,25 @@ AbiMind ist eine Progressive Web App zur Abitur-Vorbereitung: Karteikarten verwa
 
 ---
 
-## Features
-
-- 🤖 **KI-Kartengenerierung** — Automatische Karten aus PDF-Text oder Bildern (Google Gemini), mit Duplikat-Prüfung vor dem Speichern
-- 🎯 **Gewichteter Lernalgorithmus** — Kenntnis-Score (0–100) per exponentiellem Gleitmittel; schwache und neue Karten werden bevorzugt ausgewählt
-- 📦 **7er-Stapel-Lernmodus** — Karten in Batches à 7; schlecht bewertete Karten landen im Wiederholungs-Pool für spätere Stapel
-- 🏆 **Kenntnis-Status** — Kategorisierung in *Neu*, *Aktiv* und *Beherrscht* (Score ≥ 85) im Analytics-Donut-Chart
-- 📁 **Ordner-Organisation** — Decks in Ordnern strukturieren, verschieben und verwalten
-- ⏱️ **Lernzeit-Tracking** — Session-Dauer pro Deck mit Auswertung im Analytics-Dashboard
-- 📊 **Analytics** — Gesamtlernzeit, Verteilung nach Deck, Kenntnis-Boxen und Streak-Statistik
-- 🔥 **Lern-Streak** — Tägliche Lernserie im Header-Badge und in den Analytics
-- 📅 **Prüfungsplaner** — Klausuren und Termine planen; Verknüpfung mit Abi-Profil und Countdown-Widget
-- 🎓 **Abi-Profil** — Abitur-Datum, Fachkombination und Onboarding für personalisierten Countdown
-- 🔐 **Google-Login & Gast-Modus** — Cloud-Sync über Supabase oder lokale Nutzung ohne Account (IndexedDB)
-- ☁️ **Cloud-Sync** — Beim ersten Login optional lokale Gast-Daten ins Konto übernehmen
-- 📱 **PWA** — Installierbar auf iOS, Android und Desktop; Service Worker für Offline-App-Shell
-- 📥 **CSV Import/Export** — Decks als CSV herunterladen oder importieren
+Features:
+- KI-Kartengenerierung — Automatische Karten aus PDF-Text oder Bildern (Google Gemini), mit Duplikat-Prüfung vor dem Speichern
+- Gewichteter Lernalgorithmus — Kenntnis-Score (0–100) per exponentiellem Gleitmittel; schwache und neue Karten werden bevorzugt ausgewählt
+- 7er-Stapel-Lernmodus — Karten in Batches à 7; schlecht bewertete Karten landen im Wiederholungs-Pool für spätere Stapel
+- Kenntnis-Status — Kategorisierung in *Neu*, *Aktiv* und *Beherrscht* (Score ≥ 85) im Analytics-Donut-Chart
+- Ordner-Organisation — Decks in Ordnern strukturieren, verschieben und verwalten
+- Lernzeit-Tracking — Session-Dauer pro Deck mit Auswertung im Analytics-Dashboard
+- Analytics — Gesamtlernzeit, Verteilung nach Deck, Kenntnis-Boxen und Streak-Statistik
+- Lern-Streak — Tägliche Lernserie im Header-Badge und in den Analytics
+- Prüfungsplaner — Klausuren und Termine planen; Verknüpfung mit Abi-Profil und Countdown-Widget
+- Abi-Profil — Abitur-Datum, Fachkombination und Onboarding für personalisierten Countdown
+- Google-Login & Gast-Modus — Cloud-Sync über Supabase oder lokale Nutzung ohne Account (IndexedDB)
+- Cloud-Sync — Beim ersten Login optional lokale Gast-Daten ins Konto übernehmen
+- PWA — Installierbar auf iOS, Android und Desktop; Service Worker für Offline-App-Shell
+- CSV Import/Export — Decks als CSV herunterladen oder importieren
 
 ---
 
-## Tech Stack
-
+Tech Stack:
 | Bereich | Technologie |
 |---------|-------------|
 | **Frontend** | [Vite 8](https://vite.dev/) · [React 19](https://react.dev/) · [TypeScript](https://www.typescriptlang.org/) |
@@ -94,9 +84,6 @@ cp .env.example .env.local
 # 5. Entwicklungsserver starten (Frontend + API)
 npm run dev:full
 ```
-
-Die App ist unter [http://localhost:5173](http://localhost:5173) erreichbar.
-
 **Benötigte Umgebungsvariablen** (Details und Platzhalter in `.env.example`):
 
 | Variable | Zweck |
@@ -135,6 +122,3 @@ AbiMind ist im Rahmen meiner Portfolio-Vorbereitung für ein **Wirtschaftsinform
 
 Technisch verbindet das Projekt Frontend-Entwicklung, Datenbankdesign (lokal + cloud), API-Integration und Deployment — von der Idee bis zur installierbaren Web-App.
 
----
-
-<p align="center"><em>Lerne smarter, nicht länger.</em></p>
