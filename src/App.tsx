@@ -63,7 +63,7 @@ function App() {
   const showNav = view.type !== 'auth';
 
   return (
-    <div className="min-h-screen bg-surface-base">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-surface-base">
       <AppHeader
         activeSection={activeSection}
         showNav={showNav}
@@ -73,7 +73,7 @@ function App() {
         onOpenAuth={() => setView({ type: 'auth' })}
       />
 
-      <main className="mx-auto max-w-content px-4 py-8 text-left">
+      <main className="mx-auto w-full min-w-0 max-w-content px-4 py-6 md:px-8 md:py-8">
         {view.type === 'auth' && (
           <AuthScreen onGuestContinue={goToDashboard} />
         )}

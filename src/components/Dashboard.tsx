@@ -191,24 +191,26 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
     return (
       <li key={deck.id} className="panel">
         {editingDeckId === deck.id ? (
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2 sm:flex-row">
             <input
               type="text"
               value={editDeckName}
               onChange={(e) => setEditDeckName(e.target.value)}
-              className="input-field"
+              className="input-field min-w-0"
               autoFocus
             />
-            <button type="button" onClick={() => handleRenameDeck(deck.id)} className="btn-primary">
-              Speichern
-            </button>
-            <button type="button" onClick={() => setEditingDeckId(null)} className="btn-ghost">
-              Abbrechen
-            </button>
+            <div className="flex shrink-0 gap-2">
+              <button type="button" onClick={() => handleRenameDeck(deck.id)} className="btn-primary">
+                Speichern
+              </button>
+              <button type="button" onClick={() => setEditingDeckId(null)} className="btn-ghost">
+                Abbrechen
+              </button>
+            </div>
           </div>
         ) : (
           <div
-            className="flex cursor-pointer items-start justify-between gap-4 rounded-lg transition-colors hover:bg-accent-subtle"
+            className="flex cursor-pointer flex-col gap-4 rounded-lg transition-colors hover:bg-accent-subtle sm:flex-row sm:items-start sm:justify-between"
             onClick={() => onOpenDeck(deck.id)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -220,7 +222,7 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
             tabIndex={0}
             aria-label={`Deck ${deck.name} öffnen`}
           >
-            <div className="flex-1 text-left">
+            <div className="min-w-0 flex-1 text-left">
               <p className="text-subheading">{deck.name}</p>
               <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-body">
                 <span>{s.totalCards} Karten</span>
@@ -232,7 +234,7 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
               </div>
             </div>
             <div
-              className="flex shrink-0 flex-col gap-1.5"
+              className="grid w-full shrink-0 grid-cols-2 gap-2 sm:w-auto sm:max-w-[10rem] sm:grid-cols-1 sm:gap-1.5"
               onClick={(e) => e.stopPropagation()}
               onKeyDown={(e) => e.stopPropagation()}
             >
@@ -287,7 +289,7 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
   }
 
   return (
-    <div className="space-y-8 text-left">
+    <div className="mx-auto w-full min-w-0 space-y-6 md:space-y-8">
       {!dataReady && <p className="text-body">Cloud-Daten werden geladen …</p>}
       {actionError && <div className="alert-error">{actionError}</div>}
       {foldersNeedMigration && <div className="alert-warning">{FOLDER_MIGRATION_HINT}</div>}
@@ -305,7 +307,7 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
 
       <section>
         <h2 className="text-heading mb-4">Ordner</h2>
-        <form onSubmit={handleCreateFolder} className="mb-5 flex gap-2">
+        <form onSubmit={handleCreateFolder} className="mb-5 flex flex-col gap-2 sm:flex-row">
           <input
             type="text"
             value={newFolderName}
@@ -332,14 +334,15 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
                 <div key={folder.id} className="panel-nested">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     {editingFolderId === folder.id ? (
-                      <div className="flex flex-1 gap-2">
+                      <div className="flex w-full flex-col gap-2 sm:flex-row">
                         <input
                           type="text"
                           value={editFolderName}
                           onChange={(e) => setEditFolderName(e.target.value)}
-                          className="input-field"
+                          className="input-field min-w-0 flex-1"
                           autoFocus
                         />
+                        <div className="flex shrink-0 gap-2">
                         <button
                           type="button"
                           onClick={() => handleRenameFolder(folder.id)}
@@ -354,13 +357,14 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
                         >
                           Abbrechen
                         </button>
+                        </div>
                       </div>
                     ) : (
                       <>
                         <button
                           type="button"
                           onClick={() => toggleFolder(folder.id)}
-                          className="flex items-center gap-2 text-left text-subheading transition-colors hover:text-accent"
+                          className="flex min-w-0 max-w-full items-center gap-2 text-left text-subheading transition-colors hover:text-accent"
                         >
                           <span className="text-caption">{expanded ? '▼' : '▶'}</span>
                           {folder.name}
@@ -410,7 +414,7 @@ export function Dashboard({ onOpenDeck, onStartStudy, refreshKey = 0 }: Dashboar
 
         <h2 className="text-heading mb-4">Decks</h2>
 
-        <form onSubmit={handleCreateDeck} className="mb-5 flex gap-2">
+        <form onSubmit={handleCreateDeck} className="mb-5 flex flex-col gap-2 sm:flex-row">
           <input
             type="text"
             value={newDeckName}

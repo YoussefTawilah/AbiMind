@@ -128,7 +128,7 @@ export function DeckDetail({ deckId, onBack, onStartStudy, onAiGenerate }: DeckD
   }
 
   return (
-    <div className="space-y-8 text-left">
+    <div className="mx-auto w-full min-w-0 space-y-6 md:space-y-8">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <button type="button" onClick={onBack} className="link-back mb-3">
@@ -254,8 +254,8 @@ export function DeckDetail({ deckId, onBack, onStartStudy, onAiGenerate }: DeckD
                     </div>
                   </div>
                 ) : (
-                  <div className="flex justify-between gap-4">
-                    <div className="flex-1 text-left">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-4">
+                    <div className="min-w-0 flex-1 text-left">
                       <p className="text-subheading">{card.front}</p>
                       <CardTextContent
                         text={card.back}
@@ -270,7 +270,7 @@ export function DeckDetail({ deckId, onBack, onStartStudy, onAiGenerate }: DeckD
                         Kenntnis-Score: {card.knowledgeScore}% · Bewertungen: {card.reviewCount}
                       </p>
                     </div>
-                    <div className="flex shrink-0 flex-col gap-1.5">
+                    <div className="flex shrink-0 flex-row gap-2 sm:flex-col sm:gap-1.5">
                       <button
                         type="button"
                         onClick={() => {

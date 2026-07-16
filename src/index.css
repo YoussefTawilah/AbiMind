@@ -60,12 +60,16 @@
 
 @layer base {
   html {
-    @apply antialiased;
+    @apply antialiased overflow-x-hidden;
     color-scheme: dark;
   }
 
   body {
-    @apply bg-surface-base font-sans text-text-primary;
+    @apply w-full max-w-full overflow-x-hidden bg-surface-base font-sans text-text-primary;
+  }
+
+  #root {
+    @apply w-full max-w-full min-w-0 overflow-x-hidden;
   }
 
   ::selection {
@@ -75,11 +79,11 @@
 
 @layer components {
   .panel {
-    @apply rounded-xl border border-border-subtle bg-surface-raised p-5 shadow-[0_1px_3px_#00000040];
+    @apply w-full min-w-0 rounded-xl border border-border-subtle bg-surface-raised p-4 shadow-[0_1px_3px_#00000040] md:p-5;
   }
 
   .panel-nested {
-    @apply rounded-xl border border-border-subtle bg-surface-overlay p-4;
+    @apply w-full min-w-0 rounded-xl border border-border-subtle bg-surface-overlay p-3 md:p-4;
   }
 
   .input-field {
@@ -119,7 +123,7 @@
   }
 
   .text-display {
-    @apply text-[1.75rem] font-semibold leading-tight text-text-primary;
+    @apply text-2xl font-semibold leading-tight text-text-primary md:text-[1.75rem];
   }
 
   .text-heading {

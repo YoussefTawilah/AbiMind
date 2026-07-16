@@ -26,17 +26,33 @@ export function AppHeader({
   onOpenAuth,
 }: AppHeaderProps) {
   return (
-    <header className="sticky top-0 z-40 border-b border-border-subtle bg-surface-raised/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3">
-        <div className="flex shrink-0 items-start gap-2">
+    <header className="sticky top-0 z-40 w-full max-w-full overflow-x-hidden border-b border-border-subtle bg-surface-raised/90 backdrop-blur-md">
+      <div
+        className={`mx-auto w-full max-w-content px-4 md:px-8 ${
+          showNav
+            ? 'grid grid-cols-[minmax(0,1fr)_auto] grid-rows-[auto_auto] items-center gap-x-3 gap-y-2 py-3 md:grid-cols-[auto_minmax(0,1fr)_auto] md:grid-rows-1 md:gap-x-4'
+            : 'flex items-center justify-between gap-3 py-3'
+        }`}
+      >
+        <div className="col-start-1 row-start-1 flex min-w-0 items-center gap-2">
           <button
             type="button"
             onClick={onGoHome}
-            className="text-left transition-opacity hover:opacity-90"
+            className="flex min-w-0 items-center gap-2.5 text-left transition-opacity hover:opacity-90 sm:gap-3"
           >
-            <span className="block text-lg font-semibold text-accent">AbiMind</span>
-            <span className="block text-xs text-text-secondary">
-              Lerne smarter, nicht länger.
+            <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl sm:h-12 sm:w-12">
+              <img
+                src="/logo-neu.png"
+                alt=""
+                aria-hidden
+                className="absolute left-0 top-0 h-[200%] w-full max-w-none object-cover object-top"
+              />
+            </span>
+            <span className="min-w-0">
+              <span className="block text-base font-semibold text-accent sm:text-lg">AbiMind</span>
+              <span className="block text-[11px] leading-snug text-text-secondary sm:text-xs">
+                Lerne smarter, nicht länger.
+              </span>
             </span>
           </button>
           {showNav && <StreakBadge refreshKey={streakRefreshKey} />}
@@ -44,7 +60,7 @@ export function AppHeader({
 
         {showNav && (
           <nav
-            className="flex flex-1 items-center justify-center gap-1 sm:gap-2"
+            className="col-span-2 row-start-2 flex w-full min-w-0 items-stretch gap-0.5 md:col-span-1 md:col-start-2 md:row-start-1 md:justify-center md:gap-1"
             aria-label="Hauptnavigation"
           >
             {NAV_ITEMS.map((item) => {
@@ -54,7 +70,7 @@ export function AppHeader({
                   key={item.id}
                   type="button"
                   onClick={() => onNavigate(item.id)}
-                  className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors sm:px-4 sm:py-2 ${
+                  className={`min-w-0 flex-1 rounded-lg px-1.5 py-1.5 text-center text-[11px] font-medium leading-tight transition-colors sm:text-xs md:flex-none md:px-4 md:py-2 md:text-sm ${
                     isActive
                       ? 'bg-accent-subtle text-accent'
                       : 'text-text-secondary hover:bg-surface-overlay hover:text-text-primary'
@@ -68,7 +84,7 @@ export function AppHeader({
           </nav>
         )}
 
-        <div className="shrink-0">
+        <div className={`shrink-0 ${showNav ? 'col-start-2 row-start-1 justify-self-end md:col-start-3' : ''}`}>
           <UserProfileDropdown onOpenAuth={onOpenAuth} />
         </div>
       </div>

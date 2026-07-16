@@ -113,7 +113,7 @@ export function ExamPlannerDashboard() {
   }
 
   return (
-    <div className="space-y-8 text-left">
+    <div className="mx-auto w-full min-w-0 space-y-6 md:space-y-8">
       <div>
         <h2 className="text-display">Prüfungsplaner</h2>
         <p className="mt-2 text-body">Klausuren, Abgaben und wichtige Uni-Termine im Blick behalten.</p>

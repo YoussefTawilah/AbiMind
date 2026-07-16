@@ -61,7 +61,7 @@ export function InstallPrompt() {
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-content rounded-xl border border-border-subtle bg-surface-elevated p-4 shadow-[0_8px_32px_#00000060] sm:left-auto sm:right-4"
+      className="fixed bottom-4 left-4 right-4 z-50 mx-auto w-auto max-w-content rounded-xl border border-border-subtle bg-surface-elevated p-4 shadow-[0_8px_32px_#00000060] sm:left-auto sm:right-4 md:right-8"
       role="dialog"
       aria-labelledby="pwa-install-title"
     >

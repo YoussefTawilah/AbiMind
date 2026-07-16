@@ -299,11 +299,11 @@ export function StudySession({ deckId, onBack, onFinish }: StudySessionProps) {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <button type="button" onClick={() => void leaveSession(onBack)} className="link-back">
+      <div className="flex flex-wrap items-center justify-between gap-2 gap-y-1">
+        <button type="button" onClick={() => void leaveSession(onBack)} className="link-back shrink-0">
           ← Abbrechen
         </button>
-        <span className="text-body">
+        <span className="min-w-0 text-right text-xs text-body sm:text-sm">
           {`${batchLabel} · ${currentIndex + 1}/${batchCards.length} im Stapel`}
         </span>
       </div>
@@ -325,7 +325,7 @@ export function StudySession({ deckId, onBack, onFinish }: StudySessionProps) {
       <button
         type="button"
         onClick={() => setFlipped((f) => !f)}
-        className="panel mx-auto flex min-h-72 w-full max-w-lg cursor-pointer flex-col items-center justify-center rounded-2xl p-8 transition-colors hover:border-border-default hover:bg-surface-overlay"
+        className="panel mx-auto flex min-h-56 w-full max-w-lg cursor-pointer flex-col items-center justify-center rounded-2xl p-5 transition-colors hover:border-border-default hover:bg-surface-overlay sm:min-h-72 sm:p-8"
       >
         <p className="mb-3 text-caption uppercase tracking-wide">
           {flipped ? 'Rückseite' : 'Vorderseite'} · Klicken zum Umdrehen
@@ -343,13 +343,13 @@ export function StudySession({ deckId, onBack, onFinish }: StudySessionProps) {
           <p className="text-center text-body text-text-secondary">
             Wie gut hast du die Antwort gewusst?
           </p>
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
             {([1, 2, 3, 4, 5] as ReviewQuality[]).map((q) => (
               <button
                 key={q}
                 type="button"
                 onClick={() => handleRate(q)}
-                className={`rounded-lg px-2 py-3 text-xs font-medium text-white transition-colors ${QUALITY_BUTTON_COLORS[q]}`}
+                className={`rounded-lg px-2 py-2.5 text-[10px] font-medium leading-tight text-white transition-colors sm:py-3 sm:text-xs ${QUALITY_BUTTON_COLORS[q]}`}
               >
                 {QUALITY_LABELS[q]}
               </button>
