@@ -74,24 +74,24 @@ Tech Stack:
 - Ein [Google Gemini API-Key](https://aistudio.google.com/apikey)
 - Optional: Google OAuth in Supabase aktivieren (für Login)
 
-### Setup
+Setup
 
-```bash
-# 1. Repository klonen
+bash
+1. Repository klonen
 git clone https://github.com/DEIN-USERNAME/Abimind.git
 cd Abimind
 
-# 2. Abhängigkeiten installieren
+2. Abhängigkeiten installieren
 npm install
 
-# 3. Umgebungsvariablen einrichten
+3. Umgebungsvariablen einrichten
 cp .env.example .env.local
-# Werte in .env.local eintragen (siehe .env.example für alle Keys)
+Werte in .env.local eintragen (siehe .env.example für alle Keys)
 
-# 4. Supabase-Migrationen ausführen
-# SQL-Dateien aus supabase/migrations/ im Supabase SQL Editor ausführen
+4. Supabase-Migrationen ausführen
+SQL-Dateien aus supabase/migrations/ im Supabase SQL Editor ausführen
 
-# 5. Entwicklungsserver starten (Frontend + API)
+5. Entwicklungsserver starten (Frontend + API)
 npm run dev:full
 ```
 **Benötigte Umgebungsvariablen** (Details und Platzhalter in `.env.example`):
@@ -122,13 +122,5 @@ Abimind/
 │   └── lib/              # DB, Sync, Lernlogik, Analytics, …
 ├── supabase/migrations/  # PostgreSQL-Schema
 └── vercel.json           # Build- & Routing-Konfiguration
-```
 
----
-
-## Über dieses Projekt
-
-AbiMind ist im Rahmen meiner Portfolio-Vorbereitung für ein **Wirtschaftsinformatik-Studium** entstanden. Ausgangspunkt war ein konkreter eigener Bedarf: strukturierte Abitur-Vorbereitung mit wiederholbarem Lernen, statt unübersichtlicher Zettelstapel und generischer Lern-Apps.
-
-Technisch verbindet das Projekt Frontend-Entwicklung, Datenbankdesign (lokal + cloud), API-Integration und Deployment — von der Idee bis zur installierbaren Web-App.
 
