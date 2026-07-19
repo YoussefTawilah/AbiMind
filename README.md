@@ -5,20 +5,30 @@ AbiMind ist eine Progressive Web App zur Abitur-Vorbereitung: Karteikarten verwa
 [Live Demo](https://abi-mind-swart.vercel.app)
 
 Screenshots:
-![Dashboard – Übersicht mit Decks, Ordnern und Abi-Countdown](./screenshots/dashboard.png)
-<!-- Screenshot hier einfügen: Dashboard -->
+App-Screenshots & Features
+1. Dashboard & Übersicht
+Alles Wichtige auf einen Blick: Dein persönlicher Abi-Countdown und der aktuelle durchschnittliche Kenntnis-Score über all deine Decks hinweg.
+| Dashboard | Ordner-Verwaltung |
+ ![Dashboard](IMG_3898.jpeg) | ![Ordner](IMG_3892.jpeg) |
 
-![Lernmodus – 7er-Stapel mit Kenntnis-Score](./screenshots/study-session.png)
-<!-- Screenshot hier einfügen: Lernmodus -->
+2. Strukturierte Lernorganisation
+Erstelle Ordner für deine Fächer (wie Biologie oder Mathe) und organisiere deine Decks übersichtlich untereinander – vollkommen mobil-optimiert.
+![Ordner und Decks](IMG_3893.jpeg)
 
-![KI-Generator – Karten aus PDF oder Bild](./screenshots/ai-generator.png)
-<!-- Screenshot hier einfügen: KI-Kartengenerierung -->
+3. Prüfungsplaner & Analytics
+Behalte Klausuren, Abgaben und wichtige Termine im Auge und tracke deine exakte Lernzeit sowie deinen exakten Wissensstand pro Deck.
+| Prüfungsplaner | Analytics & Lernzeit | Wissensstand |
+| ![Prüfungsplaner](IMG_3895.jpeg) | ![Analytics](IMG_3894.jpeg) | ![Wissensstand](IMG_3896.jpeg) |
 
-![Analytics – Lernzeit, Streak und Kenntnis-Verteilung](./screenshots/analytics.png)
-<!-- Screenshot hier einfügen: Analytics -->
+4. Karten-Ansicht & KI-Generator
+Füge manuell neue Karteikarten hinzu, importiere vorhandene Dateien oder nutze den integrierten KI-Generator, um blitzschnell neue Lernstapel zu erstellen.
+| Deck-Ansicht | Karten-Liste |
+| ![Deck-Ansicht](IMG_3891.jpeg) | ![Karten-Liste](IMG_3897.jpeg) |
 
-![Prüfungsplaner und Abi-Countdown](./screenshots/exam-planner.png)
-<!-- Screenshot hier einfügen: Prüfungsplaner -->
+5. Intelligenter Lernmodus
+Lerne hocheffizient mit dem mobilen 5-Stufen-Bewertungssystem. Jede Bewertung aktualisiert deinen Kenntnis-Score dynamisch im Hintergrund.
+![Lernmodus](IMG_3899.jpeg)
+
 
 ---
 
