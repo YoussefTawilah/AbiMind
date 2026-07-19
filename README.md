@@ -93,34 +93,30 @@ SQL-Dateien aus supabase/migrations/ im Supabase SQL Editor ausführen
 
 5. Entwicklungsserver starten (Frontend + API)
 npm run dev:full
-```
-**Benötigte Umgebungsvariablen** (Details und Platzhalter in `.env.example`):
-
-| Variable | Zweck |
-|----------|--------|
-| `GEMINI_API_KEY` | Google Gemini — nur serverseitig |
-| `GEMINI_MODEL` | Optional — Modell-Override |
-| `VITE_SUPABASE_URL` | Supabase-Projekt-URL |
-| `VITE_SUPABASE_ANON_KEY` | Supabase Anon Key |
-
-> **Hinweis:** `GEMINI_API_KEY` darf kein `VITE_`-Prefix haben — sonst würde der Key ins Frontend-Bundle gelangen.
-
-Weitere Scripts: `npm run dev` (nur Frontend), `npm run build`, `npm run preview`, `npm run test`.
-
----
-
-## Projektstruktur
-
-```
-Abimind/
-├── api/                  # Vercel Serverless Functions (Gemini)
-├── public/               # Manifest, PWA-Icons, statische Assets
-├── screenshots/          # README-Screenshots (optional)
-├── src/
-│   ├── components/       # UI-Komponenten
-│   ├── contexts/         # Auth & Abi-Profil
-│   └── lib/              # DB, Sync, Lernlogik, Analytics, …
-├── supabase/migrations/  # PostgreSQL-Schema
-└── vercel.json           # Build- & Routing-Konfiguration
-
-
+Benötigte Umgebungsvariablen
+(Genaue Details und Platzhalter findest du in der Datei .env.example)
+ * GEMINI_API_KEY (Google Gemini)
+   * Zweck: Wird für die KI-Funktionen benötigt.
+   * Wichtig: Läuft ausschließlich serverseitig. Diese Variable darf auf keinen Fall ein VITE_-Präfix haben, da der geheime Key sonst im Frontend-Bundle für jeden sichtbar wäre!
+ * GEMINI_MODEL
+   * Zweck: Optionaler Eintrag, falls du ein bestimmtes Modell erzwingen möchtest (Modell-Override).
+ * VITE_SUPABASE_URL
+   * Zweck: Die offizielle URL deines Supabase-Projekts.
+ * VITE_SUPABASE_ANON_KEY
+   * Zweck: Der öffentliche anonyme Schlüssel für deine Supabase-Datenbank.
+Verfügbare Scripts
+ * npm run dev — Startet ausschließlich das Frontend
+ * npm run build — Erstellt die Produktionsversion der App
+ * npm run preview — Startet eine Vorschau der gebauten Version
+ * npm run test — Führt die automatischen Tests aus
+   
+Projektstruktur und Ordner
+ * api/ — Enthält die Vercel Serverless Functions (hier läuft die Gemini-KI-Logik).
+ * public/ — Für statische Dateien wie das Manifest, PWA-Icons und dein neues Logo.
+ * screenshots/ — Optionaler Ordner für die Bilder deiner README.
+ * src/ — Das Herzstück deiner App mit:
+   * components/ (deine UI-Elemente wie der Header oder Buttons)
+   * contexts/ (für Login-Status und das Abi-Profil)
+   * lib/ (für Datenbank-Verbindungen, Lernlogik und Analytics)
+ * supabase/migrations/ — Enthält die PostgreSQL-Datenbank-Befehle und Tabellenstrukturen.
+ * vercel.json — Die Konfigurationsdatei für den Build und die Weiterleitungen auf Vercel.
